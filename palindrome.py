@@ -9,10 +9,8 @@ def is_palindrome(strng):
         return True
     else:
         return False
-    
-welcome = True
-gamecont = ["y", "n"]
-while welcome == True:
+
+def pdrome():
     word = input("Give me a word and I will tell you if it is a palindrome or not: ")
     lword = word.lower()
     if lword.isalpha():
@@ -22,12 +20,19 @@ while welcome == True:
             print(f"{is_palindrome(lword)}, ".upper() + word + " is not a palindrome!")
     else:
         print("input error, type in a word")
-    while welcome == True:
-        newattempt = input("Try another word (y/n)? ")
-        if newattempt in gamecont and newattempt == "n":
-            welcome = False
-        elif newattempt in gamecont and newattempt == "y":
-            break
-        else:
-            print("Wrong input!")
-    print()
+        
+def palindrome_main():
+    playagain = True
+    gamecont = ["y", "n"]
+    while playagain == True:
+        pdrome()
+        while playagain == True:
+            newgame = input("Play again (y/n)?: ")
+            if newgame in gamecont and newgame == "n":
+                playagain = False
+            elif newgame in gamecont and newgame == "y":
+                break
+            else:
+                print("Wrong input! Enter 'y' or 'n'.")
+        print()
+#main()
